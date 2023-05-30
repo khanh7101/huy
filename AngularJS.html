@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <style type="text/css">
+        .div1 {
+        margin: 20px 20px;
+        }
+        .div2 {
+        margin: 25px 25px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="GridController">
+        <div class="filter-container">
+          <input type="text" placeholder="Enter text to search" ng-model="searchText">
+          <select ng-model="selectedCategory">
+            <option value="">Search by Categories</option>
+            <option value="Category 1">Category 1</option>
+            <option value="Category 2">Category 2</option>
+           
+          </select>
+        </div>
+      
+        <div class="grid-container">
+          <div class="grid-item" ng-repeat="item in gridItems | filter:filterItems">
+            <img ng-src="{{ item.image }}" alt="">
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    <div class="div1">
+    <img src="./img/rooney.jpg" height="200px" width="200px">
+      
+    </div>
+    <div class="div2">
+      <img src="./img/casemiro.jpg" height="200px" width="200px">
+      
+    </div>
+
+</body>
+<script src="./angular.min.js"></script>
+</html>
